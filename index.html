@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dear Future Wife | A Prophetic Oath</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #030303; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background-color: #020202; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .font-brutal { font-family: 'Archivo Black', sans-serif; }
         .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* The "Sovereign Aura" */
-        .gold-glow {
-            position: fixed; top: -20%; left: -10%; width: 70vw; height: 70vw;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-            z-index: 0; pointer-events: none;
+        /* Atmospheric Background */
+        .sanctuary-bg {
+            position: fixed; inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                #020202;
+            z-index: -1;
+        }
+
+        /* Cinematic Particles */
+        .particles {
+            position: fixed; inset: 0;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.2) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            animation: move-particles 60s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes move-particles {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
         }
 
         .text-reveal {
@@ -23,114 +41,141 @@
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
+            animation: shine 8s linear infinite;
         }
 
         @keyframes shine { to { background-position: 200% center; } }
 
-        .book-canvas {
+        .book-vault {
             background: linear-gradient(145deg, #0a0a0a, #000);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.9);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 40px 120px rgba(0,0,0,1), inset 0 0 20px rgba(212, 175, 55, 0.05);
+            transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
         }
 
-        .input-minimal {
+        .book-vault:hover { transform: translateY(-15px) rotateY(-5deg); border-color: #D4AF37; }
+
+        .input-line {
             background: transparent;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            transition: 0.4s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .input-minimal:focus { border-bottom-color: #D4AF37; outline: none; }
+        .input-line:focus { border-bottom-color: #D4AF37; padding-left: 10px; outline: none; }
         
-        .floating { animation: floating 6s ease-in-out infinite; }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .btn-oath {
+            background: #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
         }
+
+        .btn-oath:hover { background: #fff; box-shadow: 0 0 50px rgba(212, 175, 55, 0.4); transform: scale(1.02); }
     </style>
 </head>
 <body class="antialiased selection:bg-[#D4AF37] selection:text-black">
 
-    <div class="gold-glow"></div>
+    <div class="sanctuary-bg"></div>
+    <div class="particles"></div>
 
     <main class="relative z-10">
         
-        <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
-            <h2 class="font-brutal text-[#D4AF37] tracking-[0.5em] text-[10px] uppercase mb-8">The Prophetic Preparation</h2>
+        <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+            <div class="mb-12 flex items-center gap-6 opacity-50">
+                <div class="w-12 h-[1px] bg-[#D4AF37]"></div>
+                <h2 class="font-brutal text-[#D4AF37] tracking-[0.6em] text-[9px] uppercase">A Prophetic Preparation</h2>
+                <div class="w-12 h-[1px] bg-[#D4AF37]"></div>
+            </div>
             
-            <div class="max-w-4xl">
-                <h1 class="font-serif italic text-4xl md:text-7xl leading-tight mb-12">
+            <div class="max-w-5xl">
+                <h1 class="font-serif italic text-4xl md:text-8xl leading-[1.1] mb-16 tracking-tight">
                     "Dear Future Wife, <br> 
-                    I have found <span class="text-reveal font-black">God</span>, <br> 
-                    I have found <span class="text-reveal font-black">Myself</span>, <br> 
-                    Relax, I will find you."
+                    I have found <span class="text-reveal font-black not-italic">God</span>, <br> 
+                    I have found <span class="text-reveal font-black not-italic">Myself</span>, <br> 
+                    <span class="opacity-80">Relax, I will find you."</span>
                 </h1>
             </div>
 
-            <div class="w-[1px] h-24 bg-gradient-to-b from-[#D4AF37] to-transparent mb-12"></div>
+            <div class="animate-bounce opacity-20 mt-12">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
         </section>
 
-        <section class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 px-8 py-24 items-center">
-            <div class="space-y-8">
-                <div class="space-y-4">
-                    <h3 class="font-brutal text-white/40 tracking-[0.3em] text-[10px] uppercase">The Awakening</h3>
-                    <p class="font-serif italic text-2xl text-gray-400 leading-relaxed">
-                        "I made a life-altering decision: I will do life the Bible way, or I will not do it at all."
+        <section class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 px-8 py-40 items-center">
+            <div class="lg:col-span-7 space-y-16">
+                <div class="space-y-6">
+                    <h3 class="font-brutal text-[#D4AF37] tracking-[0.4em] text-[10px] uppercase">The Constitutional Decision</h3>
+                    <p class="font-serif italic text-3xl md:text-5xl text-gray-200 leading-snug">
+                        "I will do life the Bible way, or I will not do it at all."
                     </p>
                 </div>
-                <p class="text-gray-500 leading-relaxed font-light text-lg">
-                    Marriage is not casual; it is a sacred responsibility. This book is a **Personal Constitution**—an oath sworn to the woman I have not yet met, but whom I am already learning to lead.
-                </p>
-                <div class="pt-6">
-                    <div class="flex items-center gap-4 text-[#D4AF37] font-bold text-xs tracking-widest uppercase">
-                        <span class="w-10 h-[1px] bg-[#D4AF37]"></span> Security is the role of a Head
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex justify-center">
-                <div class="book-canvas w-[300px] h-[450px] rounded-r-xl relative overflow-hidden flex flex-col justify-between p-10 floating">
-                    <div class="font-brutal text-[9px] tracking-[0.4em] text-[#D4AF37]">JAN 31, 2026 UNVEILING</div>
-                    <div>
-                        <h4 class="font-serif italic text-5xl leading-none mb-2">Dear <br> Future <br> Wife</h4>
-                        <p class="text-[10px] font-bold text-white/30 tracking-widest uppercase mt-4">By Ogirima Obey</p>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-[#D4AF37]"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white/5 py-32 px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-12">
-                <h3 class="font-serif italic text-4xl text-[#D4AF37]">"Relax, I will find you."</h3>
-                <p class="text-gray-300 italic text-xl leading-loose font-light">
-                    "I receive the grace to lead our home with such wisdom that your love will never turn to bitterness because of my failures."
-                </p>
-                <div class="pt-8 grid grid-cols-2 gap-4 text-[10px] font-black tracking-[0.3em] uppercase text-white/20">
-                    <div>Priesthood</div>
-                    <div>Identity</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-xl mx-auto px-8 py-32">
-            <div class="text-center mb-16">
-                <h2 class="font-brutal text-2xl mb-4">ENLIST FOR THE REVELATION</h2>
-                <p class="text-gray-600 text-[10px] tracking-widest uppercase">Be the first to hold the manifesto</p>
-            </div>
-
-            <form action="https://formspree.io/f/mzdrekga" method="POST" class="space-y-12">
-                <input type="text" name="name" placeholder="YOUR NAME" required class="input-minimal w-full py-4 text-sm tracking-widest uppercase font-bold text-[#D4AF37]">
-                <input type="email" name="email" placeholder="SECURE EMAIL" required class="input-minimal w-full py-4 text-sm tracking-widest">
                 
-                <button type="submit" class="w-full bg-[#D4AF37] text-black font-black py-6 rounded-full text-xs tracking-[0.4em] hover:bg-white transition-all transform hover:-translate-y-1">
+                <div class="space-y-8 text-gray-400 leading-relaxed font-light text-xl max-w-2xl">
+                    <p>
+                        Marriage is not a casual destination; it is a <span class="text-white font-bold">sacred responsibility</span>. This manifesto is the Personal Constitution of a man coming into his own.
+                    </p>
+                    <p class="text-lg opacity-70">
+                        The day people feel secure around you is the day you truly step into your role as a "Head." A virtuous woman is drawn to the man who exudes unwavering security.
+                    </p>
+                </div>
+
+                <div class="pt-8 flex items-center gap-8">
+                    <div class="text-center border-r border-white/10 pr-8">
+                        <span class="block text-2xl font-serif italic text-white">01</span>
+                        <span class="text-[8px] uppercase tracking-widest text-[#D4AF37]">Identity</span>
+                    </div>
+                    <div class="text-center border-r border-white/10 pr-8">
+                        <span class="block text-2xl font-serif italic text-white">02</span>
+                        <span class="text-[8px] uppercase tracking-widest text-[#D4AF37]">Priesthood</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-2xl font-serif italic text-white">03</span>
+                        <span class="text-[8px] uppercase tracking-widest text-[#D4AF37]">Dominion</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative group">
+                <div class="book-vault w-[320px] h-[480px] md:w-[400px] md:h-[580px] rounded-r-[2rem] mx-auto flex flex-col justify-between p-12 relative overflow-hidden">
+                    <div class="absolute -top-20 -right-20 w-60 h-60 bg-[#D4AF37] opacity-10 blur-[80px]"></div>
+                    
+                    <div class="font-brutal text-[10px] tracking-[0.5em] text-[#D4AF37]">JAN 31, 2026</div>
+                    
+                    <div class="relative z-10">
+                        <h4 class="font-serif italic text-6xl md:text-7xl leading-none mb-6">Dear <br> Future <br> Wife.</h4>
+                        <div class="w-16 h-1 bg-[#D4AF37] mb-6"></div>
+                        <p class="text-[11px] font-black text-white/40 tracking-[0.3em] uppercase">By Ogirima Obey</p>
+                    </div>
+
+                    <div class="text-[9px] font-bold text-gray-600 tracking-widest uppercase">The Prophetic Manifesto</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-2xl mx-auto px-8 py-40">
+            <div class="text-center mb-20 space-y-4">
+                <h2 class="font-serif italic text-4xl">Enter the Covenant</h2>
+                <p class="text-gray-500 text-[10px] tracking-[0.4em] font-bold uppercase">Be the first to hold the seed</p>
+            </div>
+
+            <form action="https://formspree.io/f/mzdrekga" method="POST" class="space-y-16">
+                <div>
+                    <label class="text-[10px] text-[#D4AF37] font-black tracking-widest uppercase block mb-2">Witness Name</label>
+                    <input type="text" name="name" placeholder="YOUR FULL NAME" required class="input-line w-full py-4 text-sm tracking-widest font-bold text-white uppercase">
+                </div>
+                <div>
+                    <label class="text-[10px] text-[#D4AF37] font-black tracking-widest uppercase block mb-2">Secure Channel</label>
+                    <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required class="input-line w-full py-4 text-sm tracking-widest">
+                </div>
+                
+                <button type="submit" class="btn-oath w-full py-7 rounded-full text-black font-black text-[11px] uppercase tracking-[0.5em]">
                     PRE-ORDER THE OATH
                 </button>
             </form>
         </section>
 
-        <footer class="pb-20 text-center">
-            <p class="text-[8px] text-white/10 tracking-[1.5em] font-black italic uppercase">The Ogirima Obey Legacy</p>
+        <footer class="pb-32 text-center opacity-30">
+            <p class="text-[10px] text-white tracking-[2em] font-black italic uppercase">MEN AFLAME NETWORK</p>
+            <p class="text-[8px] mt-4 tracking-widest">© 2026 THE OGIRIMA OBEY LEGACY</p>
         </footer>
     </main>
 
